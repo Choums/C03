@@ -6,7 +6,7 @@
 /*   By: caidel <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 18:10:17 by caidel            #+#    #+#             */
-/*   Updated: 2020/07/08 11:49:07 by caidel           ###   ########.fr       */
+/*   Updated: 2020/07/09 15:34:14 by caidel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strstr(char *str, char *to_find)
 	while (str[i])
 	{
 		j = 0;
-		if (str[i] == to_find[j])
-		{
 			while (str[i] == to_find[j])
 			{
 				j++;
@@ -30,7 +28,6 @@ char	*ft_strstr(char *str, char *to_find)
 					return (str + i - j);
 				}
 			}
-		}
 		i++;
 	}
 	return (0);

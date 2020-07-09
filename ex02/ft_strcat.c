@@ -6,7 +6,7 @@
 /*   By: caidel <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 16:05:59 by caidel            #+#    #+#             */
-/*   Updated: 2020/07/07 17:22:55 by caidel           ###   ########.fr       */
+/*   Updated: 2020/07/09 17:59:19 by caidel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ char	*ft_strcat(char *dest, char *src)
 		j++;
 	while (src[i])
 	{
-		dest[j] = src[i];
-		j++;
+		dest[i + j] = src[i];
 		i++;
 	}
+	dest[i + j] = '\0';
 	return (dest);
 }
