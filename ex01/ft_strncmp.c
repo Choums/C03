@@ -6,7 +6,7 @@
 /*   By: caidel <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 15:56:03 by caidel            #+#    #+#             */
-/*   Updated: 2020/07/08 22:17:59 by caidel           ###   ########.fr       */
+/*   Updated: 2020/07/09 21:50:54 by caidel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int i;
 
+	if (!(n))
+		return (0);
 	i = 0;
-	while (s1[i] == s2[i] && s1[i] && s2[i] && i < n)
+	while (s1[i] == s2[i] && s1[i] && s2[i] && i < n - 1)
 		i++;
 	return (s1[i] - s2[i]);
 }
