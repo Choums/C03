@@ -6,9 +6,19 @@
 /*   By: caidel <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 11:49:58 by caidel            #+#    #+#             */
-/*   Updated: 2020/07/10 15:15:18 by caidel           ###   ########.fr       */
+/*   Updated: 2020/07/13 13:08:47 by caidel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+int				ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
@@ -17,16 +27,10 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	unsigned int j;
 	unsigned int tsrc;
 
-	j = 0;
 	i = 0;
-	tsrc = 0;
-	tdst = 0;
-	while (dest[tdst])
-		tdst++;
-	while (src[tsrc])
-		tsrc++;
-	while (dest[j])
-		j++;
+	tsrc = ft_strlen(src);
+	tdst = ft_strlen(dest);
+	j = tdst;
 	if (!(size))
 		return (tdst + tsrc);
 	if (size < tdst)
