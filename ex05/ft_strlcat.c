@@ -6,7 +6,7 @@
 /*   By: caidel <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 11:49:58 by caidel            #+#    #+#             */
-/*   Updated: 2020/07/13 20:16:30 by caidel           ###   ########.fr       */
+/*   Updated: 2020/07/19 16:59:45 by caidel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,17 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	unsigned int tdst;
 	unsigned int j;
 	unsigned int tsrc;
+	unsigned int max;
 
 	i = 0;
 	tsrc = ft_strlen(src);
 	tdst = ft_strlen(dest);
 	j = tdst;
-	if (size < tdst)
+	if (size <= tdst)
 		return (size + tsrc);
-	while (src[i] && i < size - 1)
-	{
-		dest[i + j] = src[i];
-		i++;
-		j++;
-	}
+	max = size - i;
+	while (src[i] && i < max - 1)
+		dest[j++] = src[i++];
 	dest[j] = '\0';
 	return (tdst + tsrc);
 }
